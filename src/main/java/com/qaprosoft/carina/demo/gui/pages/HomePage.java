@@ -36,6 +36,7 @@ public class HomePage extends AbstractPage {
     @FindBy(id = "footmenu")
     private FooterMenu footerMenu;
 
+
     @FindBy(xpath = "//div[contains(@class, 'brandmenu-v2')]//a")
     private List<ExtendedWebElement> brandLinks;
 

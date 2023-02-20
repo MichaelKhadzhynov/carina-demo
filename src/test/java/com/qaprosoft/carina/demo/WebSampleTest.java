@@ -20,6 +20,8 @@ import java.util.List;
 import com.zebrunner.carina.core.registrar.tag.TestPriority;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -37,6 +39,7 @@ import com.qaprosoft.carina.demo.gui.pages.CompareModelsPage;
 import com.qaprosoft.carina.demo.gui.pages.HomePage;
 import com.qaprosoft.carina.demo.gui.pages.ModelInfoPage;
 import com.qaprosoft.carina.demo.gui.pages.NewsPage;
+
 
 /**
  * This sample shows how create Web test.
@@ -93,6 +96,8 @@ public class WebSampleTest implements IAbstractTest {
         softAssert.assertEquals(specs.get(1).readSpec(SpecType.ANNOUNCED), "2015, June 19");
         softAssert.assertEquals(specs.get(2).readSpec(SpecType.ANNOUNCED), "2017, June");
         softAssert.assertAll();
+
+
     }
     
     @Test()
