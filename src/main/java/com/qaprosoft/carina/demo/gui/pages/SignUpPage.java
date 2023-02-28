@@ -2,16 +2,13 @@ package com.qaprosoft.carina.demo.gui.pages;
 
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.core.gui.AbstractPage;
-import com.zebrunner.carina.utils.Configuration;
-import com.zebrunner.carina.utils.R;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class SignUpPage extends AbstractPage {
 
     @FindBy(xpath = "//input[@id = \"uname\"]")
-    private ExtendedWebElement userNameField;
+    private ExtendedWebElement nickNameField;
 
     @FindBy(xpath = "//fieldset[@id=\"udata-f\"]//input[@id=\"email\"]")
     private ExtendedWebElement emailField;
@@ -28,35 +25,54 @@ public class SignUpPage extends AbstractPage {
     @FindBy(xpath = "//div[@id=\"ucsubmit-f\"]//input[@id=\"nick-submit\"]")
     private ExtendedWebElement submitButton;
 
+    @FindBy(xpath = "//div[@class ='normal-text res-success']/h3")
+    private ExtendedWebElement registrationSuccessMassage;
+
     public SignUpPage(WebDriver driver) {
         super(driver);
     }
 
-    public void fillingFields(){
-        submitButton.scrollTo();
 
-        if(userNameField.isPresent()){
-            userNameField.type("UserName12378665432");
-        }
+    public SignUpPage typeNickName(String nickname){
+        nickNameField.type(nickname);
+        return this;
+    }
 
-        if(emailField.isPresent()) {
-            emailField.type("ewruhwe@uhu.com");
-        }
+    public SignUpPage typeEmail(String email){
+        emailField.type(email);
+        return this;
+    }
 
-        if (passwordField.isPresent()){
-            passwordField.type("3456898542345");
-        }
+    public SignUpPage typePassword(String password){
+        passwordField.type(password);
+        return this;
+    }
 
-        if(personalDataCheckbox.isPresent()){
-            personalDataCheckbox.clickByJs();
-        }
+    public SignUpPage clickPersonalDataCheckbox(){
+        personalDataCheckbox.clickByJs();
+        return this;
+    }
 
-        if(ageCheckbox.isPresent()){
-            ageCheckbox.clickByJs();
-        }
+    public SignUpPage clickAgeCheckbox(){
+        ageCheckbox.clickByJs();
+        return this;
+    }
 
-        if(submitButton.isClickable()){
-            submitButton.click();
-        }
+    public void clickSubmitButton(){
+        submitButton.click();
+    }
+
+    public ExtendedWebElement getRegistrationSuccessMassage() {
+        return registrationSuccessMassage;
+    }
+
+    public SignUpPage signUp(String nickname, String email, String password){
+        typeNickName(nickname);
+        typeEmail(email);
+        typePassword(password);
+        clickPersonalDataCheckbox();
+        clickAgeCheckbox();
+        clickSubmitButton();
+        return this;
     }
 }

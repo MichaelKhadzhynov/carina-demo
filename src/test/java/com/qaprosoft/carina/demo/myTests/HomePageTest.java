@@ -3,25 +3,26 @@ package com.qaprosoft.carina.demo.myTests;
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.demo.gui.components.FooterMenu;
+import com.qaprosoft.carina.demo.gui.components.Header;
 import com.qaprosoft.carina.demo.gui.components.LogInMenu;
+import com.qaprosoft.carina.demo.gui.enums.FooterMenuElements;
+import com.qaprosoft.carina.demo.gui.enums.HeaderMenuElements;
 import com.qaprosoft.carina.demo.gui.pages.HomePage;
-import com.qaprosoft.carina.demo.gui.pages.SignUpPage;
+import com.qaprosoft.carina.demo.gui.pages.LogInPage;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.core.registrar.tag.Priority;
 import com.zebrunner.carina.core.registrar.tag.TestPriority;
-import org.openqa.selenium.Keys;
 
-import static org.openqa.selenium.Keys.ENTER;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
+import java.lang.invoke.MethodHandles;
 import java.util.List;
 
-import static org.openqa.selenium.Keys.ENTER;
-
 public class HomePageTest implements IAbstractTest {
+    private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @Test()
     @MethodOwner(owner = "Khadzhynov Michael")
@@ -30,17 +31,32 @@ public class HomePageTest implements IAbstractTest {
         HomePage homePage = new HomePage(getDriver());
 
         homePage.open();
-        Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
+        Assert.assertTrue(homePage.isPageOpened(), "Home page wasn't not opened");
+
         FooterMenu footerMenu = homePage.getFooterMenu();
-        Assert.assertTrue(footerMenu.isUIObjectPresent(2), "Footer menu wasn't found!");
 
-        List<ExtendedWebElement> footerMenuElements = homePage.getFooterMenuElements();
+        footerMenu.getFooterMenuButtons().forEach(e -> Assert.assertTrue(e.isPresent(), "element not present"));
 
-        footerMenuElements.forEach(e -> Assert.assertTrue(e.isPresent(), " Element is not present"));
-        footerMenuElements.forEach(e -> Assert.assertTrue(e.isClickable(), " Element is not clickable"));
+        Assert.assertEquals(footerMenu.getFooterMenuElement(FooterMenuElements.NEWS).getAttribute("href"),
+                footerMenu.openNewsPage().getCurrentUrl());
 
-        Assert.assertTrue(homePage.openFooterLinks());
+        Assert.assertEquals(footerMenu.getFooterMenuElement(FooterMenuElements.REVIEWS).getAttribute("href"),
+                footerMenu.openReviewsPage().getCurrentUrl());
 
+        Assert.assertEquals(footerMenu.getFooterMenuElement(FooterMenuElements.TOOLS).getAttribute("href"),
+                footerMenu.openToolsPage().getCurrentUrl());
+
+        Assert.assertEquals(footerMenu.getFooterMenuElement(FooterMenuElements.COMPARE).getAttribute("href"),
+                footerMenu.openComparePage().getCurrentUrl());
+
+        Assert.assertEquals(footerMenu.getFooterMenuElement(FooterMenuElements.CONTACT_US).getAttribute("href"),
+                footerMenu.openContactUsPage().getCurrentUrl());
+
+        Assert.assertEquals(footerMenu.getFooterMenuElement(FooterMenuElements.COVERAGE).getAttribute("href"),
+                footerMenu.openCoveragePage().getCurrentUrl());
+
+        Assert.assertEquals(footerMenu.getFooterMenuElement(FooterMenuElements.GLOSSARY).getAttribute("href"),
+                footerMenu.openGlossaryPage().getCurrentUrl());
     }
 
     @Test()
@@ -51,74 +67,52 @@ public class HomePageTest implements IAbstractTest {
         homePage.open();
         Assert.assertTrue(homePage.isPageOpened(), "Home page is not opened");
 
-        List<ExtendedWebElement> headerMenuElements = homePage.getHeaderMenuElements();
+        Header header = homePage.getHeaderMenu();
 
-        headerMenuElements.forEach(e -> Assert.assertTrue(e.isPresent(), " Element is not present"));
+        Assert.assertTrue(header.isUIObjectPresent(2), "Header menu not present");
 
-        Assert.assertTrue(homePage.openHeaderLinks());
+        header.getHeaderMenuButtons().forEach(e -> Assert.assertTrue(e.isPresent(), "element not present"));
+
+        Assert.assertEquals(header.openNewsPage().getCurrentUrl(),
+                header.getHeaderMenuButton(HeaderMenuElements.NEWS).getAttribute("href"));
+        Assert.assertEquals(header.openContactUsPage().getCurrentUrl(),
+                header.getHeaderMenuButton(HeaderMenuElements.CONTACT_US).getAttribute("href"));
+        Assert.assertEquals(header.openReviewsPage().getCurrentUrl(),
+                header.getHeaderMenuButton(HeaderMenuElements.REVIEWS).getAttribute("href"));
+        Assert.assertEquals(header.openCoveragePage().getCurrentUrl(),
+                header.getHeaderMenuButton(HeaderMenuElements.COVERAGE).getAttribute("href"));
+        Assert.assertEquals(header.openPhoneFinderPage().getCurrentUrl(),
+                header.getHeaderMenuButton(HeaderMenuElements.PHONE_FINDER).getAttribute("href"));
     }
+
 
     @Test()
     @MethodOwner(owner = "Khadzhynov Michael")
     @TestPriority(Priority.P3)
-    public void testSignUp() {
+    public void testLogIn() {
         HomePage homePage = new HomePage(getDriver());
         homePage.open();
-        homePage.getSignUpPage();
 
-        SignUpPage signUpPage = new SignUpPage(getDriver());
-        signUpPage.fillingFields();
+        LogInMenu logInMenu = homePage.getHeaderMenu().openLogInMenu();
+
+        LogInPage loInPage = logInMenu.logIn("rtyui@test.com", "356789098");
+
+        Assert.assertEquals(loInPage.getTitle(), "Login - GSMArena.com");
 
     }
 
     @Test()
     @MethodOwner(owner = "Khadzhynov Michael")
     @TestPriority(Priority.P4)
-    public void testLogin() {
-        HomePage homePage = new HomePage(getDriver());
-        homePage.open();
-        homePage.getLogInMenu();
-
-        LogInMenu logInMenu = new LogInMenu(getDriver());
-        logInMenu.LogIn();
-
-    }
-
-    @Test()
-    @MethodOwner(owner = "Khadzhynov Michael")
-    @TestPriority(Priority.P5)
     public void testHoverBrandButtons() {
         HomePage homePage = new HomePage(getDriver());
         homePage.open();
-        homePage.getBrandHover();
+
+        homePage.getBrandLinks().forEach(e -> {
+            e.hover();
+            Assert.assertEquals(e.getElement().getCssValue("background-color"), "rgb(213, 0, 0)");
+            LOGGER.info("Element " + e.getText() + " hover testing success");
+        });
     }
 
 }
-
-/**
- * Тест кейс 1.
- * open Home Page.
- * scroll down to the footer menu
- * check if all buttons on the menu present.
- * click on each button and check if we go to the next Page
- * <p>
- * Тест кейс 2
- * open Home Page.
- * check all buttons on Header menu - if present
- * click on each button and check if we go to the next Page
- * <p>
- * Тест кейс 3
- * open Home Page.
- * click on the button “Sing up”
- * check if all elements on the SingUp Page present
- * fill in all info to create new account
- * click Submit button
- * <p>
- * Тест кейс 4
- * open Home Page.
- * click on the button “Log in”
- * Check all elements on the LogIn Modal - if elements present
- * fill in login and password
- * click button Log in
- * check if was opened next page
- */
