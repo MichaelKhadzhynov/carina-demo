@@ -1,0 +1,8 @@
+{
+  "id": 14,
+  <#if country??>"country": "${country}",</#if>
+  <#if city??>"city": "${city}",</#if>
+  <#if homeAddress??>"homeAddress": "${homeAddress}",</#if>
+  <#if postalCode??>"postalCode": "${postalCode}",</#if>
+  <#if phone??>"phone": "${phone}"</#if>
+}

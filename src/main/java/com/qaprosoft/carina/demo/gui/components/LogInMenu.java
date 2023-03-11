@@ -6,6 +6,7 @@ import com.qaprosoft.carina.core.gui.AbstractUIObject;
 import com.qaprosoft.carina.demo.gui.pages.LogInPage;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -28,6 +29,9 @@ public class LogInMenu extends AbstractUIObject {
     @FindBy(xpath = ".//span[@id='login-popup2']//a[@class='forgot']")
     private ExtendedWebElement forgotPasswordButton;
 
+    public ExtendedWebElement getEmailField() {
+        return emailField;
+    }
 
     public LogInMenu(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);

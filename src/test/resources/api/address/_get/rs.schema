@@ -1,0 +1,409 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "country": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "homeAddress": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer"
+        },
+        "phone": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "country",
+        "city",
+        "homeAddress",
+        "postalCode",
+        "phone"
+      ]
+    }
+  ]
+}

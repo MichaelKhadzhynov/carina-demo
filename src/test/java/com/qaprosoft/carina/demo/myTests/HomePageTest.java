@@ -1,7 +1,6 @@
 package com.qaprosoft.carina.demo.myTests;
 
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
-import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebElement;
 import com.qaprosoft.carina.demo.gui.components.FooterMenu;
 import com.qaprosoft.carina.demo.gui.components.Header;
 import com.qaprosoft.carina.demo.gui.components.LogInMenu;
@@ -16,10 +15,10 @@ import com.zebrunner.carina.core.registrar.tag.TestPriority;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.lang.invoke.MethodHandles;
-import java.util.List;
 
 public class HomePageTest implements IAbstractTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
@@ -114,5 +113,44 @@ public class HomePageTest implements IAbstractTest {
             LOGGER.info("Element " + e.getText() + " hover testing success");
         });
     }
+
+    @Test()
+    @MethodOwner(owner = "Khadzhynov Michael")
+    @TestPriority(Priority.P5)
+    public void testLogInErrorMassage() {
+        HomePage homePage = new HomePage(getDriver());
+        homePage.open();
+
+        LogInMenu logInMenu = homePage.getHeaderMenu().openLogInMenu();
+
+        logInMenu.logIn("", "");
+        Assert.assertEquals("Заполните это поле", logInMenu.getEmailField().getElement()
+                        .getDomProperty("validationMessage")
+                /*getAttribute("validationMessage")*/);
+    }
+
+    @Test(dataProvider = "userData")
+    @MethodOwner(owner = "Khadzhynov Michael")
+    @TestPriority(Priority.P6)
+    public void testLogInDataProvider(String email, String password){
+        HomePage homePage = new HomePage(getDriver());
+        homePage.open();
+
+        LogInMenu logInMenu = homePage.getHeaderMenu().openLogInMenu();
+
+        LogInPage loInPage = logInMenu.logIn(email, password);
+
+        Assert.assertEquals(loInPage.getTitle(), "Login - GSMArena.com");
+    }
+
+    @DataProvider()
+    public Object[][] userData(){
+        return new Object[][]{
+                {"efwef@test.com", "32425355"},
+                {"egergef@test.com", "142345"},
+                {"grtwgf@test.com", "32543534"}
+        };
+    }
+
 
 }

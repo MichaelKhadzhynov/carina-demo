@@ -4,11 +4,15 @@ import com.qaprosoft.carina.core.foundation.webdriver.decorator.ExtendedWebEleme
 import com.qaprosoft.carina.core.gui.AbstractUIObject;
 import com.qaprosoft.carina.demo.gui.enums.HeaderMenuElements;
 import com.qaprosoft.carina.demo.gui.pages.*;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static org.openqa.selenium.Keys.ENTER;
 
 public class Header extends AbstractUIObject {
 
@@ -29,6 +33,12 @@ public class Header extends AbstractUIObject {
 
     @FindBy(xpath = "//span[@id='login-popup2']")
     private LogInMenu logInMenu;
+
+    @FindBy(xpath = "//header//a[@href='https://www.youtube.com/channel/UCbLq9tsbo8peV22VxbDAfXA?sub_confirmation=1']")
+    private ExtendedWebElement youTubeButton;
+
+    private final ArrayList<String> windowsList = new ArrayList<>(driver.getWindowHandles());
+
 
 
     public Header(WebDriver driver, SearchContext searchContext) {
@@ -100,5 +110,25 @@ public class Header extends AbstractUIObject {
         logInButton.click();
         return logInMenu;
     }
+
+
+    public Header openYouTubeInNewWindow(){
+        youTubeButton.getElement().sendKeys(Keys.COMMAND, ENTER);
+        return this;
+    }
+
+    public void switchToYouTubeTab(){
+        List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(0));
+    }
+
+
+    public YouTubeTab openYouTubeTab(){
+        openYouTubeInNewWindow();
+        switchToYouTubeTab();
+        return new YouTubeTab(driver).pauseMainVideo();
+    }
+
+
 
 }

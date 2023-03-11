@@ -31,6 +31,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -54,6 +55,8 @@ public class HomePage extends AbstractPage {
 
     @FindBy(className = "news-column-index")
     private ExtendedWebElement newsColumn;
+
+
 
 
     public HomePage(WebDriver driver) {
@@ -106,5 +109,7 @@ public class HomePage extends AbstractPage {
     public ExtendedWebElement getPhoneFinderButton() {
         return phoneFinderButton;
     }
+
+
 
 }
