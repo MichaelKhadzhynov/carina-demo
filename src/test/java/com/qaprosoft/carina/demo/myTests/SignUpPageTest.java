@@ -7,6 +7,7 @@ import com.qaprosoft.carina.demo.gui.pages.SignUpPage;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.core.registrar.tag.Priority;
 import com.zebrunner.carina.core.registrar.tag.TestPriority;
+import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -44,7 +45,6 @@ public class SignUpPageTest implements IAbstractTest {
         SignUpPage signUpPage = homePage.getHeaderMenu().openSignUpPage();
 
         signUpPage.signUp(nickname, email, password);
-
         Assert.assertEquals(signUpPage.getRegistrationSuccessMassage().getText(), "Your account was created. ");
     }
 

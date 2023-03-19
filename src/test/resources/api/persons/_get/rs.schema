@@ -1,0 +1,347 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "passportNumber": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "addressId": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "passportNumber",
+        "email",
+        "addressId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "passportNumber": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "addressId": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "passportNumber",
+        "email",
+        "addressId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "passportNumber": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "addressId": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "passportNumber",
+        "email",
+        "addressId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "passportNumber": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "addressId": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "passportNumber",
+        "email",
+        "addressId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "passportNumber": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "addressId": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "passportNumber",
+        "email",
+        "addressId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "passportNumber": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "addressId": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "passportNumber",
+        "email",
+        "addressId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "passportNumber": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "addressId": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "passportNumber",
+        "email",
+        "addressId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "passportNumber": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "addressId": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "passportNumber",
+        "email",
+        "addressId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "passportNumber": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "addressId": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "passportNumber",
+        "email",
+        "addressId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "passportNumber": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        },
+        "addressId": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "passportNumber",
+        "email",
+        "addressId"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "passportNumber": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "addressId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "passportNumber",
+        "email",
+        "addressId"
+      ]
+    }
+  ]
+}

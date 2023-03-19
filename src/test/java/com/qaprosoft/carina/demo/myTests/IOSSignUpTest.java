@@ -16,7 +16,6 @@ public class IOSSignUpTest implements IAbstractTest, IMobileUtils {
         signUpPage.typePassword("g34827tfgh");
         signUpPage.clickAgeCheckbox();
         signUpPage.clickPersonalDataCheckbox();
-
         signUpPage.clickSubmitButton();
     }
 }

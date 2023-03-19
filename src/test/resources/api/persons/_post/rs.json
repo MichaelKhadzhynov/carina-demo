@@ -1,0 +1,8 @@
+{
+  "id": 11,
+  <#if firstName??>"firstName": "${firstName}",</#if>
+  <#if lastName??>"lastName": "${lastName}",</#if>
+  <#if passportNumber??>"passportNumber": "${passportNumber}",</#if>
+  <#if email??>"email": "${email}",</#if>
+  <#if addressId??>"addressId": "${addressId}"</#if>
+}

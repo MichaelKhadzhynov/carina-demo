@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class ReviewsPageTest implements IAbstractTest {
 
     @Test()
-    @MethodOwner(owner = "Khadzhynov Mychael")
+    @MethodOwner(owner = "Khadzhynov Michael")
     public void testReviewItems(){
         HomePage homePage = new HomePage(getDriver());
         homePage.open();

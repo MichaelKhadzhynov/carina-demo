@@ -37,6 +37,12 @@ public class Header extends AbstractUIObject {
     @FindBy(xpath = "//header//a[@href='https://www.youtube.com/channel/UCbLq9tsbo8peV22VxbDAfXA?sub_confirmation=1']")
     private ExtendedWebElement youTubeButton;
 
+    @FindBy(xpath = ".//input[@class=' js-bound']")
+    private ExtendedWebElement searchField;
+
+    @FindBy(xpath = "//div[@class=\"phone-results\"]//ul[@class=\"autocomplete-last-searched\"]//li//span")
+    private List<ExtendedWebElement> searchList;
+
     private final ArrayList<String> windowsList = new ArrayList<>(driver.getWindowHandles());
 
 
@@ -130,5 +136,8 @@ public class Header extends AbstractUIObject {
     }
 
 
-
+    public List<ExtendedWebElement> getSearchList() {
+        searchField.click();
+        return searchList;
+    }
 }

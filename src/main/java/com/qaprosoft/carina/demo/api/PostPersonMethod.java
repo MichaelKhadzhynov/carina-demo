@@ -2,21 +2,25 @@ package com.qaprosoft.carina.demo.api;
 
 import com.qaprosoft.carina.core.foundation.api.AbstractApiMethodV2;
 import com.qaprosoft.carina.core.foundation.api.annotation.Endpoint;
+import com.qaprosoft.carina.core.foundation.api.annotation.RequestTemplatePath;
 import com.qaprosoft.carina.core.foundation.api.annotation.ResponseTemplatePath;
 import com.qaprosoft.carina.core.foundation.api.annotation.SuccessfulHttpStatus;
 import com.qaprosoft.carina.core.foundation.api.http.HttpMethodType;
 import com.qaprosoft.carina.core.foundation.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.Configuration;
-import org.openqa.selenium.support.ui.FluentWait;
 
 
-@Endpoint(url = "${base_url}/addresses", methodType = HttpMethodType.GET)
-@ResponseTemplatePath(path = "api/address/_get/rs.json")
-@SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
+@Endpoint(url="${base_url}/persons", methodType = HttpMethodType.POST)
+@RequestTemplatePath(path = "api/persons/_post/rq.json")
+@ResponseTemplatePath(path= "api/persons/_post/rs.json")
+@SuccessfulHttpStatus(status = HttpResponseStatusType.CREATED_201)
 
-public class GetAddressMethod extends AbstractApiMethodV2 {
+public class PostPersonMethod extends AbstractApiMethodV2 {
+    public PostPersonMethod() {
+        super("api/persons/_post/rq.json",
+                "api/persons/_post/rs.json",
+                "api/persons/persons.properties");
 
-    public GetAddressMethod() {
         replaceUrlPlaceholder("base_url", Configuration.getEnvArg("api_url"));
     }
 }
