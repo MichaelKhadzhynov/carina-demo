@@ -15,6 +15,9 @@ public class RozetkaHomePage extends AbstractPage {
     @FindBy(xpath = "//div[@class='menu-wrapper menu-wrapper_state_static ng-star-inserted']//ul//li")
     private List<ExtendedWebElement> menuCategories;
 
+    @FindBy(xpath = "//div[@class=\"ng-tns-c115-3 side-links ng-star-inserted\"]//li")
+    private List<ExtendedWebElement> mainSidebarButtonList;
+
     public RozetkaHomePage(WebDriver driver) {
         super(driver);
     }
@@ -22,5 +25,10 @@ public class RozetkaHomePage extends AbstractPage {
     public ComputersNotebooksPage openComputersNotebooksPage() {
         menuCategories.get(0).click();
     return new ComputersNotebooksPage(driver);
+    }
+
+    public RozetkaCareersPage openRozetkaCareersPage(){
+        mainSidebarButtonList.get(2).click();
+        return new RozetkaCareersPage(driver);
     }
 }

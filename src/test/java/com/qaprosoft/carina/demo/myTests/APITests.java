@@ -7,6 +7,7 @@ import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class APITests implements IAbstractTest {
@@ -104,6 +105,5 @@ public class APITests implements IAbstractTest {
         getPersonMethod.addParameter("id", "11");
         getPersonMethod.callAPIExpectSuccess();
         getPersonMethod.validateResponseAgainstSchema("api/persons/_get/rs.schema");
-
     }
 }
